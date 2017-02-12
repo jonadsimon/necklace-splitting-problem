@@ -4,9 +4,14 @@ The [necklace splitting problem](https://en.wikipedia.org/wiki/Necklace_splittin
 
 # Algorithm
 
-In the case where k=t=2, there exists a linear time algorithm for finding the two (or fewer) cuts which are needed to solve the problem. That algorithm is contained in the file `necklace_splitting.py"
+In the case where k=t=2, there exists a linear time algorithm for finding the two (or fewer) cuts which are needed to solve the problem. That algorithm is contained in the file `necklace_splitting.py`
 
 # Extras
 
 I was inspired to write this code after watching a beautiful video walkthrough of the proof by 3Blue1Brown. [The video can be found here.](https://www.youtube.com/watch?v=FhSFkLhDANA)
 
+# TODO
+
+* Unit-test the code
+* Roll my own FrozenDict class to cut down on the additional confusing calls to `bead_to_idx` and `idx_to_bead`
+* Generalize algorithm to higher values of k and t
