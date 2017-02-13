@@ -12,6 +12,5 @@ I was inspired to write this code after watching a beautiful video walkthrough o
 
 # TODO
 
-* Unit-test the code
-* Roll my own FrozenDict class to cut down on the additional confusing calls to `bead_to_idx` and `idx_to_bead`
+* Roll my own FrozenDict class to cut down on the additional confusing calls to `bead_to_idx`
 * Generalize algorithm to higher values of k and t

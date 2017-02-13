@@ -46,8 +46,8 @@ def split_necklace(necklace):
 	bead_to_idx = dict(zip(bead_counter.keys(), [0,1]))
 	left_bead_pair_count = [0,0]
 	for i in range(len(necklace)):
-		left_bead_pair_count[bead_to_idx[left_bead_pair_count[i]]] += 1
-		if [2*left_bead_pair_count[0],2*left_bead_pair_count[1]] == bead_counter.values():
+		left_bead_pair_count[bead_to_idx[necklace[i]]] += 1
+		if left_bead_pair_count == [x/2 for x in bead_counter.values()]:
 			warn("The solution is degenerate, requiring only 1 cut")
 			return [(0,i)], [(i+1,len(necklace)-1)]
 
@@ -65,7 +65,7 @@ def split_necklace(necklace):
 		left_cum_sum_dict[tuple(left_bead_pair_count)] = i
 
 	# Next iterate from right to left, looking for complimentary pairs
-	right_bead_pair_compliment_count = bead_counter.values()
+	right_bead_pair_compliment_count = [x/2 for x in bead_counter.values()]
 	for i in range(len(necklace)-1,-1,-1):
 		right_bead_pair_compliment_count[bead_to_idx[necklace[i]]] -= 1
 		if tuple(right_bead_pair_compliment_count) in left_cum_sum_dict:
